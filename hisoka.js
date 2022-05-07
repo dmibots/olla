@@ -1485,7 +1485,7 @@ break
                 hisoka.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
-	    case 'ytmp3': case 'ytaudio': {
+	    case 'yta': case 'ytaudio': {
                 let { yta } = require('./lib/y2mate')
                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 128kbps`
                 let quality = args[1] ? args[1] : '128kbps'
@@ -1495,7 +1495,7 @@ break
                 hisoka.sendMessage(m.chat, { audio: { url: media.dl_link }, mimetype: 'audio/mpeg', fileName: `${media.title}.mp3` }, { quoted: m })
             }
             break
-            case 'ytmp4': case 'ytvideo': {
+            case 'ytv': case 'ytvideo': {
                 let { ytv } = require('./lib/y2mate')
                 if (!text) throw `Example : ${prefix + command} https://youtube.com/watch?v=PtFMh6Tccag%27 360p`
                 let quality = args[1] ? args[1] : '360p'
@@ -2630,31 +2630,7 @@ let capt = `⭔ Title: ${judul}
             }
             break
             case 'list': case 'menu': case 'help': case '?': {
-                anu = `┌──⭓ *Group Menu*
-│
-│⭔ ${prefix}linkgroup
-│⭔ ${prefix}ephemeral [option]
-│⭔ ${prefix}setppgc [image]
-│⭔ ${prefix}setname [text]
-│⭔ ${prefix}setdesc [text]
-│⭔ ${prefix}group [option]
-│⭔ ${prefix}editinfo [option]
-│⭔ ${prefix}add @user
-│⭔ ${prefix}kick @user
-│⭔ ${prefix}hidetag [text]
-│⭔ ${prefix}tagall [text]
-│⭔ ${prefix}antilink [on/off]
-│⭔ ${prefix}mute [on/off]
-│⭔ ${prefix}promote @user
-│⭔ ${prefix}demote @user
-│⭔ ${prefix}vote [text]
-│⭔ ${prefix}devote
-│⭔ ${prefix}upvote
-│⭔ ${prefix}cekvote
-│⭔ ${prefix}hapusvote
-│
-└───────⭓
-┌──⭓ *Webzone Menu*
+                anu = `┌──⭓ *Webzone Menu*
 │
 │⭔ ${prefix}playstore
 │⭔ ${prefix}gsmarena
@@ -2676,8 +2652,8 @@ let capt = `⭔ Title: ${judul}
 │⭔ ${prefix}twittermp3 [url]
 │⭔ ${prefix}facebook [url]
 │⭔ ${prefix}pinterestdl [url]
-│⭔ ${prefix}ytmp3 [url]
-│⭔ ${prefix}ytmp4 [url]
+│⭔ ${prefix}yta [url]
+│⭔ ${prefix}ytv [url]
 │⭔ ${prefix}getmusic [query]
 │⭔ ${prefix}getvideo [query]
 │⭔ ${prefix}umma [url]
@@ -2688,13 +2664,11 @@ let capt = `⭔ Title: ${judul}
 ┌──⭓ *Search Menu*
 │
 │⭔ ${prefix}play [query]
-│⭔ ${prefix}yts [query]
 │⭔ ${prefix}google [query]
 │⭔ ${prefix}gimage [query]
 │⭔ ${prefix}pinterest [query]
 │⭔ ${prefix}wallpaper [query]
 │⭔ ${prefix}wikimedia [query]
-│⭔ ${prefix}ytsearch [query]
 │⭔ ${prefix}ringtone [query]
 │⭔ ${prefix}stalk [option] [query]
 │
@@ -2705,7 +2679,6 @@ let capt = `⭔ Title: ${judul}
 │⭔ ${prefix}quotesanime
 │⭔ ${prefix}motivasi
 │⭔ ${prefix}dilanquote
-│⭔ ${prefix}bucinquote
 │⭔ ${prefix}katasenja
 │⭔ ${prefix}puisi
 │
